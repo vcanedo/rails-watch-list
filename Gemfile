@@ -42,8 +42,20 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# ====== Added gems ======
+# Rails Autoprefixer; To make code readable in multiple browsers
+gem "autoprefixer-rails"
+
+# Adding Sass fontawesome
+gem "font-awesome-sass", "~> 6.1"
+
+# Add rails simple form
+gem "simple_form", github: "heartcombo/simple_form"
+# ========================
+
+# ===== Uncommented Sass =====
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
