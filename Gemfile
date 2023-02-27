@@ -43,6 +43,9 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # ====== Added gems ======
+# Rest Client gem, to make API seeding
+gem 'rest-client'
+
 # Rails Autoprefixer; To make code readable in multiple browsers
 gem "autoprefixer-rails"
 
