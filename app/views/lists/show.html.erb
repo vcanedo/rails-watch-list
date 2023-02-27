@@ -1,0 +1,25 @@
+<%= render '/partials/banner', list: @list %>
+
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/12/auditorium-2584269_1920.jpg);"> %>
+  <%# <div class="container"> %>
+    <%# <%= @list.name %>
+  <%# </div> %>
+<%# </div> %>
+
+<div class="container">
+
+  <%= link_to 'add a movie', new_list_bookmark_path(@list), class: "btn btn-success" %>
+
+  <div class="cards">
+
+    <% @list.movies.each do |movie| %>
+      <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{movie.poster_url})" do %>
+        <%= movie.name %>
+        <%= movie.rating %>
+        <%= movie.overview %>
+      <% end %>
+
+    <% end %>
+
+  </div>
+</div>
