@@ -1,5 +1,7 @@
+<h1>Add a bookmark</h1>
+
 <%= simple_form_for [list, bookmark] do |f| %>
   <%= f.input :comment, error: 'Comment must have at least 6 characters' %>
-  <%= f.association :movie, as: :check_boxes %>
-  <%= f.button :submit, class: 'btn btn-success'%>
+  <%= f.association :movie, as: :radio_buttons %>
+  <%= f.button :submit, class: 'btn btn-success' %>
 <% end %>

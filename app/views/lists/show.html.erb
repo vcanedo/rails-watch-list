@@ -1,25 +1,34 @@
 <%= render '/partials/banner', list: @list %>
 
-<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/12/auditorium-2584269_1920.jpg);"> %>
-  <%# <div class="container"> %>
-    <%# <%= @list.name %>
-  <%# </div> %>
-<%# </div> %>
-
 <div class="container">
-
-  <%= link_to 'add a movie', new_list_bookmark_path(@list), class: "btn btn-success" %>
 
   <div class="cards">
 
-    <% @list.movies.each do |movie| %>
-      <%= link_to list_path(list), class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{movie.poster_url})" do %>
-        <%= movie.name %>
-        <%= movie.rating %>
-        <%= movie.overview %>
-      <% end %>
+    <% @list.bookmarks.each do |bookmark| %>
 
+      <div class="card-trip rounded">
+
+        <%= image_tag bookmark.movie.poster_url %>
+
+          <div class="card-trip-infos">
+
+            <%= link_to bookmark_path(bookmark), class: 'remove', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
+
+            <div>
+              <h2><%= bookmark.movie.title %></h2>
+              <p><%= bookmark.movie.overview %></p>
+              <h2 class="comment"><i class="quotes fa-solid fa-quote-left"></i><%= bookmark.comment %></h2>
+            </div>
+
+            <h2 class="card-trip-pricing"><%= bookmark.movie.rating %><i class="fa-solid fa-star"></i></h2>
+
+          </div>
+      </div>
     <% end %>
-
+  </div>
+  <div class="my-4">
+    <%= render 'partials/bookmark_form', bookmark: @bookmark, list: @list %>
   </div>
 </div>

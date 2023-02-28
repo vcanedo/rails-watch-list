@@ -3,9 +3,8 @@
   <%#= @list.name %>
 <%# end %>
 
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/12/auditorium-2584269_1920.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.image_url %>);">
   <div class="container">
-    <%= @list.name %>
+    <h1><%= @list.name %></h1>
   </div>
 </div>

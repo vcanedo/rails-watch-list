@@ -1,0 +1,15 @@
+.footer {
+  background-color: #232323;
+  height: 100px;
+  padding: 0px 50px;
+  text-align: center;
+}
+
+.footer:hover .footer-copyright {
+  transition: .3s;
+  color: #ff3232;
+}
+
+.footer .fa-film {
+  color: #D23333;
+}
